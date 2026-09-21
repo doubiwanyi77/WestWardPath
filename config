@@ -1,0 +1,27 @@
+-- 西游之路2.0 Westward Path 2.0 启动配置。此文件是 Lua，不能使用 os.getenv。
+skynet_root = "/home/zp/skynet/"
+
+thread = 8
+logger = nil
+harbor = 0
+start = "main"
+bootstrap = "snlua bootstrap"
+lualoader = skynet_root .. "lualib/loader.lua"
+luaservice = "./service/?.lua;" .. skynet_root .. "service/?.lua"
+lua_path = "./lualib/?.lua;" .. skynet_root .. "lualib/?.lua;" .. skynet_root .. "lualib/?/init.lua"
+lua_cpath = skynet_root .. "luaclib/?.so"
+cpath = skynet_root .. "cservice/?.so"
+
+http_port = "8080"
+ws_port = "9948"
+web_root = "./www"
+
+mysql_host = "127.0.0.1"
+mysql_port = "3306"
+mysql_user = "westwardpath2"
+mysql_password = "westwardpath2"
+mysql_database = "westwardpath2"
+
+redis_host = "127.0.0.1"
+redis_port = "6379"
+redis_db = "0"

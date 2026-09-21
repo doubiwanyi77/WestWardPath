@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>西游之路2.0 · Westward Path 2.0</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="seal">西</span>
+        <div>
+          <h1>西游之路</h1>
+          <p>Westward Path 2.0</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div id="meta" class="meta hidden"></div>
+        <button type="button" id="btn-rank" class="ghost hidden">功德榜</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="screen-login" class="login-wrap">
+        <div class="panel auth">
+          <h2>西行在即</h2>
+          <p class="hint">注册后点将组队。凑齐羁绊可获加成，助战由仙童代打。通关分数计入功德榜。</p>
+          <label>用户名 <input id="username" autocomplete="username" /></label>
+          <label>密码 <input id="password" type="password" autocomplete="current-password" /></label>
+          <div class="row">
+            <button type="button" id="btn-login">登录</button>
+            <button type="button" class="ghost" id="btn-register">注册</button>
+          </div>
+          <p id="auth-status" class="status">正在接通登录通道…</p>
+        </div>
+        <aside class="login-hero" aria-hidden="true">
+          <img class="login-hero-main" src="/img/login-hero.png" alt="" />
+          <div class="login-hero-veil"></div>
+        </aside>
+      </section>
+
+      <section id="screen-lobby" class="lobby-wrap hidden">
+        <div class="lobby-grid">
+          <div class="panel team-panel">
+            <h2>点将组队</h2>
+            <p id="lobby-user" class="hint"></p>
+            <div id="team-tray" class="team-tray"></div>
+            <div id="bond-preview" class="bond-preview"></div>
+            <div id="team-skills" class="team-skills"></div>
+            <div id="generals" class="generals"></div>
+            <div class="row">
+              <button type="button" id="btn-start">踏上西行</button>
+              <button type="button" class="ghost" id="btn-resume">继续未完对局</button>
+            </div>
+          </div>
+          <aside class="side-col">
+            <div class="panel bond-board">
+              <h2>羁绊图鉴</h2>
+              <p class="hint">人数达标即生效，全队共享加成。</p>
+              <div id="bond-book" class="bond-book"></div>
+            </div>
+            <div class="panel rank-board">
+              <h2>功德榜</h2>
+              <p id="rank-self" class="hint">登录后按历史最高分排名。</p>
+              <ol id="rank-list" class="rank-list"></ol>
+              <button type="button" class="ghost" id="btn-rank-refresh">刷新榜单</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="screen-game" class="hidden">
+        <div class="table">
+          <div class="seat boss">
+            <div id="boss-card" class="sg-card boss-card"></div>
+          </div>
+
+          <div id="allies" class="allies"></div>
+
+          <div class="center">
+            <div id="active-bonds" class="active-bonds"></div>
+            <p id="prompt" class="prompt"></p>
+            <ol id="log" class="log"></ol>
+          </div>
+
+          <div class="seat player">
+            <div id="player-card" class="sg-card player-card"></div>
+            <div class="player-play">
+              <div id="passives" class="muted"></div>
+              <div id="hand" class="hand"></div>
+              <div id="actions" class="actions"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="overlay" class="overlay hidden"></div>
+    <p id="toast" class="toast hidden"></p>
+  </div>
+  <script>
+    var module = { exports: {} };
+    var exports = module.exports;
+  </script>
+  <script src="/sproto-parser.js"></script>
+  <script>window.SprotoParser = module.exports; module = { exports: {} }; exports = module.exports;</script>
+  <script src="/sproto.js"></script>
+  <script>window.Sproto = module.exports;</script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.skynet.pid
+*.log
+.env
+dump.rdb
+data/
